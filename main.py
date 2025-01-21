@@ -13,13 +13,22 @@ def char_count(s):
     return char_dict
 
 
+
 def main():
     with open("books/frankenstein.txt") as f:
         file_contents = f.read()
+    
     total_words = word_count(file_contents)
     print("--- Begin report of books/frankenstein.txt ---")
     print(f"{total_words} words found in the document")
     ## Prints word count
+   
+    print()
+    ## For space between word count and monster count
+
+    monster_count = file_contents.lower().split().count("monster")
+    print(f"The word 'monster' was found {monster_count} times")
+    ## Prints how many times monster is used
     
     print()
     print()
@@ -29,7 +38,7 @@ def main():
     for char, count in sorted_chars:
         print(f"The '{char}' character was found {count} times")
     ## Prints character counts
-
+    
     print("--- End report ---")
 
 if __name__ == "__main__": 
