@@ -26,9 +26,11 @@ def main():
     print()
     ## For space between word count and monster count
 
-    monster_count = file_contents.lower().split().count("monster")
+    import string  
+    words = [word.strip(string.punctuation) for word in file_contents.lower().split()]
+    monster_count = words.count("monster")
     print(f"The word 'monster' was found {monster_count} times")
-    ## Prints how many times monster is used
+    ## Prints how many times 'monster' is used
     
     print()
     print()
